@@ -1,0 +1,36 @@
+﻿@model List<MedicineTrackingSystem.BusinessModel.Medicine>
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Expiry Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null && Model.Count > 0)
+                {
+                    foreach (var medicineModel in Model)
+                    {
+                        <tr>
+                            <td>@medicineModel.MedicineName</td>
+                            <td>@medicineModel.Brand</td>
+                            <td>@medicineModel.Price</td>
+                            <td>@medicineModel.Quantity</td>
+                            <td>@medicineModel.ExpiryDate</td>
+                            <td>@medicineModel.MedicineId</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
